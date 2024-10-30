@@ -12,6 +12,7 @@ public class Mod : IMod {
 
         if (Config.CurrentFishChance) modInterface.RegisterScriptMod(new FishChance());
         if (Config.LootTableView) modInterface.RegisterScriptMod(new LootTable());
+        if (Config.NeedCertainFish) modInterface.RegisterScriptMod(new NeedFish(Config.FishID));
     }
 
     public void Dispose() {

@@ -2,6 +2,7 @@
 using GDWeave.Godot.Variants;
 using GDWeave.Modding;
 
+
 namespace FishingPlus.Mods;
 
 public class LootTable : IScriptMod
@@ -24,7 +25,7 @@ public class LootTable : IScriptMod
             t => t.Type is TokenType.Newline,
         ]);
 
-
+        
         foreach (var token in tokens)
         {
             if (appendRolls.Check(token))
