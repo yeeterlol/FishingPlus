@@ -94,7 +94,7 @@ public class NeedFish : IScriptMod
                 yield return new IdentifierToken("volume_db");
                 yield return new Token(TokenType.OpAssign);
                 yield return new Token(TokenType.OpSub);
-                yield return new ConstantToken(new IntVariant(4));
+                yield return new ConstantToken(new IntVariant(-4));
                 yield return new Token(TokenType.Newline, 3);
                 yield return new IdentifierToken("notif");
                 yield return new Token(TokenType.Period);
