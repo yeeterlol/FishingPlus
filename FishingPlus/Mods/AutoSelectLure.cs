@@ -17,26 +17,7 @@ public class AutoSelectLure : IScriptMod
             t => t.Type is TokenType.Colon,
             t => t.Type is TokenType.Newline
         ]);
-        /*
-         *  6108: Token(Newline, 1)
-
-
-
-
-
-
-
-  6160: Token(OpAssign, )
-  6161: IdentifierToken(Identifier, 436, best_bait)
-  6162: Token(Newline, 3)
-  6163: IdentifierToken(Identifier, 74, PlayerData)
-  6164: Token(Period, )
-  6165: IdentifierToken(Identifier, 299, emit_signal)
-  6166: Token(ParenthesisOpen, )
-  6167: ConstantToken(Constant, 234, StringVariant(_bait_update))
-  6168: Token(ParenthesisClose, )
-  6169: Token(Newline, 1)
-        */
+        
         foreach (var token in tokens)
         {
             if (fishingRodCheck.Check(token))
