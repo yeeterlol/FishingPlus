@@ -4,7 +4,7 @@ using GDWeave.Modding;
 
 namespace FishingPlus.Mods;
 
-public class AutoSelectLure : IScriptMod
+public class AutoSelectBait : IScriptMod
 {
     public bool ShouldRun(string path) => path == "res://Scenes/Entities/Player/player.gdc";
 
