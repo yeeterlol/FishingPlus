@@ -1,4 +1,10 @@
 {
   "Id": "FishingPlus",
-  "AssemblyPath": "FishingPlus.dll"
+  "AssemblyPath": "FishingPlus.dll",
+  "Metadata": {
+	  "Name": "FishingPlus",
+	  "Author": "yeeter",
+	  "Version": "1.3.0",
+	  "Description": "A mod that improves the quality of life of Fishing with extra statistics and features!"
+  }
 }
