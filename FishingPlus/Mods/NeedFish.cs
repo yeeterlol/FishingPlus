@@ -7,11 +7,11 @@ namespace FishingPlus.Mods;
 
 public class NeedFish : IScriptMod
 {
-    private string fishID;
+    private string[] fishIDs;
 
-    public NeedFish(string fishID)
+    public NeedFish(string[] fishIDs)
     {
-        this.fishID = fishID;
+        this.fishIDs = fishIDs;
     }
 
     public bool ShouldRun(string path) => path == "res://Scenes/Entities/Player/player.gdc";
@@ -56,8 +56,19 @@ public class NeedFish : IScriptMod
 
                 yield return new Token(TokenType.CfIf);
                 yield return new IdentifierToken("roll");
-                yield return new Token(TokenType.OpEqual);
-                yield return new ConstantToken(new StringVariant(fishID));
+                yield return new Token(TokenType.OpIn);
+                yield return new Token(TokenType.BracketOpen);
+
+                var i = 0;
+                foreach (var fish in fishIDs)
+                {
+                    yield return new ConstantToken(new StringVariant(fish));
+                    if (i++ < fishIDs.Length)
+                    {
+                        yield return new Token(TokenType.Comma);
+                    }
+                }
+                yield return new Token(TokenType.BracketClose);
                 yield return new Token(TokenType.Colon);
                 yield return new Token(TokenType.Newline, 3);
                 yield return new Token(TokenType.PrVar);

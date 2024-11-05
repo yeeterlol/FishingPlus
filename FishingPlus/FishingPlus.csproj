@@ -7,21 +7,15 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Reference Include="GDWeave" Private="false"/>
-        <Reference Include="Serilog" Private="false"/>
+        <Reference Include="GDWeave" Private="false" />
+        <Reference Include="Serilog" Private="false" />
     </ItemGroup>
 
     <ItemGroup>
-        <None Include="manifest.json" CopyToOutputDirectory="PreserveNewest"/>
+        <None Include="manifest.json" CopyToOutputDirectory="PreserveNewest" />
     </ItemGroup>
 
-    <Target
-        Name="PostBuild"
-        AfterTargets="PostBuildEvent"
-        Condition="'$(GDWeavePath)' != ''">
-        <Exec
-            Command="xcopy /Y /I &quot;$(TargetDir)&quot; &quot;$(GDWeavePath)/mods/$(AssemblyName)&quot;"
-            Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))'"
-        />
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(GDWeavePath)' != ''">
+        <Exec Command="xcopy /Y /I &quot;$(TargetDir)&quot; &quot;$(GDWeavePath)/mods/$(AssemblyName)&quot;" Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))'" />
     </Target>
 </Project>

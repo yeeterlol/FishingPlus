@@ -12,8 +12,11 @@ public class Mod : IMod {
 
         if (Config.CurrentFishChance) modInterface.RegisterScriptMod(new FishChance());
         if (Config.LootTableView) modInterface.RegisterScriptMod(new LootTable());
-        if (Config.NeedCertainFish) modInterface.RegisterScriptMod(new NeedFish(Config.FishID));
+        if (Config.NeedCertainFish) modInterface.RegisterScriptMod(new NeedFish(Config.FishIDs));
         if (Config.AutoSelectBait) modInterface.RegisterScriptMod(new AutoSelectBait());
+        if (Config.AutoCollectBuddies) modInterface.RegisterScriptMod(new AutoCollectBuddies());
+        if (Config.PatientLure) modInterface.RegisterScriptMod(new PatientLurePatch());
+
 
     }
 
