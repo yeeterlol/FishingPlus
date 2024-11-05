@@ -26,6 +26,7 @@ public class AutoCollectBuddies : IScriptMod
             if (buddyCheck.Check(token))
             {
                 yield return token;
+
                 yield return new Token(TokenType.Newline, 1);
                 // PlayerData._send_notification("you caught a " + roll + " with size " + str(size) + " and quality " + str(quality))
                 yield return new IdentifierToken("PlayerData");
@@ -80,8 +81,7 @@ public class AutoCollectBuddies : IScriptMod
                 yield return new IdentifierToken("clear");
                 yield return new Token(TokenType.ParenthesisOpen);
                 yield return new Token(TokenType.ParenthesisClose);
-
-                yield return new Token(TokenType.Newline);
+                yield return new Token(TokenType.Newline, 1);
 
             }
             else

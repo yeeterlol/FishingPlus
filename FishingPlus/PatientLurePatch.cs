@@ -2,7 +2,7 @@
 using GDWeave.Godot.Variants;
 using GDWeave.Modding;
 
-namespace FishingPlus.Mods;
+namespace FishingPlus;
 
 public class PatientLurePatch : IScriptMod
 {
@@ -10,14 +10,14 @@ public class PatientLurePatch : IScriptMod
 
     public IEnumerable<Token> Modify(string path, IEnumerable<Token> tokens)
     {
-       
+
         var patientLureCheck = new MultiTokenWaiter([
             t => t.Type is TokenType.CfIf,
             t => t is IdentifierToken {Name: "rod_type"},
             t => t.Type is TokenType.OpEqual,
             t => t is ConstantToken {Value: StringVariant { Value: "patient" } },
         ]);
-        
+
         foreach (var token in tokens)
         {
             if (patientLureCheck.Check(token))
