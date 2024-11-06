@@ -21,10 +21,12 @@ public class PatientLurePatch : IScriptMod
         foreach (var token in tokens)
         {
             if (patientLureCheck.Check(token))
-            {
+            {   
                 yield return token;
                 yield return new Token(TokenType.OpOr);
-                yield return new ConstantToken(new BoolVariant(true));
+                yield return new IdentifierToken("FishingPlus");
+                yield return new Token(TokenType.Period);
+                yield return new IdentifierToken("patient");
             }
             else
             {

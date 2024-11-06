@@ -26,7 +26,18 @@ public class FishChance : IScriptMod
             if (spawnFishMatch.Check(token))
             {
 
+
                 yield return token;
+                yield return new Token(TokenType.Newline, 2);
+
+                yield return new Token(TokenType.CfIf);
+                yield return new IdentifierToken("FishingPlus");
+                yield return new Token(TokenType.Period);
+                yield return new IdentifierToken("percent");
+                yield return new Token(TokenType.Colon);
+                yield return new Token(TokenType.Newline, 3);
+
+
                 yield return new IdentifierToken("PlayerData");
                 yield return new Token(TokenType.Period);
                 yield return new IdentifierToken("_send_notification");

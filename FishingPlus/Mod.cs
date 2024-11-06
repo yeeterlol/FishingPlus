@@ -9,15 +9,15 @@ public class Mod : IMod {
     public Mod(IModInterface modInterface) {
         this.Config = modInterface.ReadConfig<Config>();
         modInterface.Logger.Information("FishingPlus has loaded!");
-
-        if (Config.CurrentFishChance) modInterface.RegisterScriptMod(new FishChance());
-        if (Config.LootTableView) modInterface.RegisterScriptMod(new LootTable());
-        if (Config.NeedCertainFish) modInterface.RegisterScriptMod(new NeedFish(Config.FishIDs));
-        if (Config.AutoSelectBait) modInterface.RegisterScriptMod(new AutoSelectBait());
-        if (Config.AutoCollectBuddies) modInterface.RegisterScriptMod(new AutoCollectBuddies());
-        if (Config.PatientLure) modInterface.RegisterScriptMod(new PatientLurePatch());
-
-
+        modInterface.RegisterScriptMod(new InjectConfig());
+        modInterface.RegisterScriptMod(new InjectMenu());
+        modInterface.RegisterScriptMod(new InjectPlayerAutism());
+        modInterface.RegisterScriptMod(new FishChance());
+        modInterface.RegisterScriptMod(new LootTable());
+        modInterface.RegisterScriptMod(new NeedFish());
+        modInterface.RegisterScriptMod(new AutoSelectBait());
+        modInterface.RegisterScriptMod(new AutoCollectBuddies());
+        modInterface.RegisterScriptMod(new PatientLurePatch());
     }
 
     public void Dispose() {

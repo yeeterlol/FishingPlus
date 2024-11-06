@@ -35,6 +35,11 @@ public class AutoSelectBait : IScriptMod
                 yield return new Token(TokenType.BracketClose);
                 yield return new Token(TokenType.OpEqual);
                 yield return new ConstantToken(new IntVariant(0));
+                yield return new Token(TokenType.OpAnd);
+                yield return new IdentifierToken("FishingPlus");
+                yield return new Token(TokenType.Period);
+                yield return new IdentifierToken("autobait");
+
                 yield return new Token(TokenType.Colon);
                 yield return new Token(TokenType.Newline, 2);
                 yield return new Token(TokenType.PrVar);

@@ -28,6 +28,12 @@ public class AutoCollectBuddies : IScriptMod
                 yield return token;
 
                 yield return new Token(TokenType.Newline, 1);
+                yield return new Token(TokenType.CfIf);
+                yield return new IdentifierToken("FishingPlus");
+                yield return new Token(TokenType.Period);
+                yield return new IdentifierToken("autocollect");
+                yield return new Token(TokenType.Colon);
+                yield return new Token(TokenType.Newline, 2);
                 // PlayerData._send_notification("you caught a " + roll + " with size " + str(size) + " and quality " + str(quality))
                 yield return new IdentifierToken("PlayerData");
                 yield return new Token(TokenType.Period);
@@ -52,15 +58,15 @@ public class AutoCollectBuddies : IScriptMod
                 yield return new Token(TokenType.ParenthesisClose);
                 yield return new Token(TokenType.ParenthesisClose);
 
-                yield return new Token(TokenType.Newline, 1);
+                yield return new Token(TokenType.Newline, 2);
                 // 	has_fish = false
-                yield return new Token(TokenType.Newline, 1);
+                yield return new Token(TokenType.Newline, 2);
                 yield return new IdentifierToken("has_fish");
                 yield return new Token(TokenType.OpAssign);
                 yield return new ConstantToken(new BoolVariant(false));
 
                 // 	$caught.visible = false
-                yield return new Token(TokenType.Newline, 1);
+                yield return new Token(TokenType.Newline, 2);
                 yield return new Token(TokenType.Dollar);
                 yield return new IdentifierToken("caught");
                 yield return new Token(TokenType.Period);
@@ -69,13 +75,13 @@ public class AutoCollectBuddies : IScriptMod
                 yield return new ConstantToken(new BoolVariant(false));
 
                 // _send_item()
-                yield return new Token(TokenType.Newline, 1);
+                yield return new Token(TokenType.Newline, 2);
                 yield return new IdentifierToken("_send_item");
                 yield return new Token(TokenType.ParenthesisOpen);
                 yield return new Token(TokenType.ParenthesisClose);
 
                 // fish_data.clear()
-                yield return new Token(TokenType.Newline, 1);
+                yield return new Token(TokenType.Newline, 2);
                 yield return new IdentifierToken("fish_data");
                 yield return new Token(TokenType.Period);
                 yield return new IdentifierToken("clear");
