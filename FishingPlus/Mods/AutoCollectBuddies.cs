@@ -87,7 +87,13 @@ public class AutoCollectBuddies : IScriptMod
                 yield return new IdentifierToken("clear");
                 yield return new Token(TokenType.ParenthesisOpen);
                 yield return new Token(TokenType.ParenthesisClose);
+<<<<<<< HEAD
                 yield return new Token(TokenType.Newline, 1);
+=======
+
+                yield return new Token(TokenType.Newline, 1);
+
+>>>>>>> 4f75dfc143e9555eb9a421c18ff2b90d89cfd0d6
             }
             else
             {
