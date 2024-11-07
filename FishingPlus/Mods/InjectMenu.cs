@@ -25,7 +25,7 @@ public class InjectMenu : IScriptMod
             t => t.Type is TokenType.Newline & t.AssociatedData is 2,
             t => t.Type is TokenType.CfIf,
             t => t.Type is TokenType.OpNot,
-            t => t is IdentifierToken {Name: "using_chat", AssociatedData: 46}
+            t => t is IdentifierToken {Name: "using_chat" }
         ], allowPartialMatch: true);
 
 
