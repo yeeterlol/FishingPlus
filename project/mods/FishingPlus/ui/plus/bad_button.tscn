@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://mods/FishingPlus/ui/plus/bad_button.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[node name="server_button" type="Control"]
+anchor_right = 0.021
+anchor_bottom = 0.037
+margin_right = -0.320004
+margin_bottom = 8.04
+rect_min_size = Vector2( 0, 48 )
+size_flags_horizontal = 3
+script = ExtResource( 1 )
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 12.0
+margin_top = 8.0
+margin_right = -12.0
+margin_bottom = -8.0
+
+[node name="Label" type="RichTextLabel" parent="Panel/HBoxContainer"]
+margin_bottom = 32.0
+size_flags_horizontal = 3
+custom_colors/default_color = Color( 0.415686, 0.266667, 0.12549, 1 )
+bbcode_enabled = true
+bbcode_text = "Server Name (16/16)"
+text = "Server Name (16/16)"
+scroll_active = false
+
+[node name="VSeparator2" type="VSeparator" parent="Panel/HBoxContainer"]
+margin_left = 4.0
+margin_right = 8.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+custom_styles/separator = SubResource( 1 )
+
+[node name="Button" type="Button" parent="Panel/HBoxContainer"]
+margin_left = 12.0
+margin_right = 24.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
+text = "select"
+clip_text = true
+script = ExtResource( 1 )
+
+[connection signal="pressed" from="Panel/HBoxContainer/Button" to="." method="_pressed"]

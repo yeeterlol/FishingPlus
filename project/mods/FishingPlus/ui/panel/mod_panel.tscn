@@ -1,0 +1,224 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Themes/secondary.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/Textures/UI/loading_dial.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Textures/Items/toolicons29.png" type="Texture" id=3]
+[ext_resource path="res://mods/FishingPlus/ui/panel/mod_panel.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Themes/panel_med.tres" type="StyleBox" id=5]
+[ext_resource path="res://Scenes/Singletons/Tooltips/tooltip_node.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/Menus/Main Menu/ui_generic_button.gd" type="Script" id=7]
+
+[node name="Control" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 4 )
+
+[node name="fishingplus" type="Button" parent="."]
+margin_left = 1771.0
+margin_top = 92.0
+margin_right = 1805.0
+margin_bottom = 126.0
+rect_min_size = Vector2( 34, 34 )
+theme = ExtResource( 1 )
+icon = ExtResource( 3 )
+expand_icon = true
+script = ExtResource( 7 )
+
+[node name="TooltipNode" type="Control" parent="fishingplus"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 6 )
+header = "Fishing+ Settings"
+body = "Set custom settings for Fishing+"
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+margin_left = 674.0
+margin_top = 187.0
+margin_right = 1239.0
+margin_bottom = 798.0
+
+[node name="percentLabel" type="Label" parent="Panel"]
+margin_left = 52.0
+margin_top = 53.0
+margin_right = 208.0
+margin_bottom = 87.0
+rect_pivot_offset = Vector2( -214, 51 )
+text = "Current Fish %"
+
+[node name="patientLabel" type="Label" parent="Panel"]
+margin_left = 50.0
+margin_top = 95.0
+margin_right = 206.0
+margin_bottom = 129.0
+rect_pivot_offset = Vector2( -214, 51 )
+text = "Patient Lure"
+
+[node name="buddies" type="Label" parent="Panel"]
+margin_left = 51.0
+margin_top = 133.0
+margin_right = 269.0
+margin_bottom = 167.0
+rect_pivot_offset = Vector2( -214, 51 )
+text = "Auto-Collect Buddies"
+
+[node name="autoSelect" type="Label" parent="Panel"]
+margin_left = 271.0
+margin_top = 94.0
+margin_right = 427.0
+margin_bottom = 128.0
+rect_pivot_offset = Vector2( -214, 51 )
+text = "Auto Select Bait"
+
+[node name="fishnotify" type="Label" parent="Panel"]
+margin_left = 325.0
+margin_top = 135.0
+margin_right = 495.0
+margin_bottom = 169.0
+rect_pivot_offset = Vector2( -214, 51 )
+text = "Fish Notifications"
+
+[node name="loot" type="Label" parent="Panel"]
+margin_left = 272.0
+margin_top = 52.0
+margin_right = 428.0
+margin_bottom = 86.0
+rect_pivot_offset = Vector2( -214, 51 )
+text = "Possible Fish"
+
+[node name="title" type="Label" parent="Panel"]
+margin_left = 18.0
+margin_top = 10.0
+margin_right = 162.0
+margin_bottom = 44.0
+text = "Fishing+ 1.5.0"
+
+[node name="percent" type="Button" parent="Panel"]
+margin_left = 10.0
+margin_top = 54.0
+margin_right = 42.0
+margin_bottom = 88.0
+rect_pivot_offset = Vector2( 18, 20 )
+text = "On"
+icon_align = 1
+
+[node name="possible" type="Button" parent="Panel"]
+margin_left = 228.0
+margin_top = 52.0
+margin_right = 260.0
+margin_bottom = 86.0
+text = "On"
+icon_align = 1
+
+[node name="patient" type="Button" parent="Panel"]
+margin_left = 9.0
+margin_top = 94.0
+margin_right = 41.0
+margin_bottom = 128.0
+text = "On"
+icon_align = 1
+
+[node name="autocollect" type="Button" parent="Panel"]
+margin_left = 8.0
+margin_top = 135.0
+margin_right = 40.0
+margin_bottom = 169.0
+rect_pivot_offset = Vector2( -9, 54 )
+text = "On"
+icon_align = 1
+
+[node name="fishselect" type="Button" parent="Panel"]
+margin_left = 281.0
+margin_top = 136.0
+margin_right = 313.0
+margin_bottom = 170.0
+rect_pivot_offset = Vector2( -9, 54 )
+text = "On"
+icon_align = 1
+
+[node name="auto" type="Button" parent="Panel"]
+margin_left = 228.0
+margin_top = 94.0
+margin_right = 260.0
+margin_bottom = 128.0
+text = "On"
+icon_align = 1
+
+[node name="close" type="Button" parent="Panel"]
+margin_left = 495.0
+margin_top = 10.0
+margin_right = 552.0
+margin_bottom = 70.0
+text = "X"
+
+[node name="Panel2" type="Panel" parent="Panel"]
+anchor_top = 0.42
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+custom_styles/panel = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/Panel2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/Panel2/ScrollContainer"]
+margin_right = 501.0
+margin_bottom = 290.38
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 8
+
+[node name="TextureRect" type="CenterContainer" parent="Panel/Panel2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 0.280029
+margin_bottom = 0.280029
+mouse_filter = 2
+
+[node name="Control" type="Control" parent="Panel/Panel2/TextureRect"]
+margin_left = 266.0
+margin_top = 161.0
+margin_right = 266.0
+margin_bottom = 161.0
+mouse_filter = 2
+
+[node name="dial" type="Sprite" parent="Panel/Panel2/TextureRect/Control"]
+visible = false
+texture = ExtResource( 2 )
+
+[node name="SearchLabel" type="Label" parent="Panel"]
+margin_left = 11.0
+margin_top = 178.0
+margin_right = 131.0
+margin_bottom = 217.0
+text = "Search (Fish Notifications):"
+uppercase = true
+
+[node name="LineEdit" type="LineEdit" parent="Panel"]
+margin_left = 15.0
+margin_top = 217.0
+margin_right = 528.0
+margin_bottom = 260.0
+
+[connection signal="pressed" from="fishingplus" to="." method="_open"]
+[connection signal="pressed" from="Panel/percent" to="." method="_on_percent_pressed"]
+[connection signal="pressed" from="Panel/possible" to="." method="_on_possible_pressed"]
+[connection signal="pressed" from="Panel/patient" to="." method="_on_patient_pressed"]
+[connection signal="pressed" from="Panel/autocollect" to="." method="_on_autocollect_pressed"]
+[connection signal="pressed" from="Panel/fishselect" to="." method="_on_select_push"]
+[connection signal="pressed" from="Panel/auto" to="." method="_on_autobait_pressed"]
+[connection signal="pressed" from="Panel/close" to="." method="_close"]
+[connection signal="focus_entered" from="Panel/LineEdit" to="." method="_on_LineEdit_focus_entered"]
+[connection signal="focus_exited" from="Panel/LineEdit" to="." method="_on_LineEdit_focus_exited"]
+[connection signal="text_changed" from="Panel/LineEdit" to="." method="_on_LineEdit_text_changed"]
