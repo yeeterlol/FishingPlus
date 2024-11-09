@@ -38,6 +38,24 @@ public class LootTable : IScriptMod
                 yield return new IdentifierToken("possible");
                 yield return new Token(TokenType.Colon);
                 yield return new Token(TokenType.Newline, 3);
+                yield return new Token(TokenType.PrVar);
+                yield return new IdentifierToken("item");
+                yield return new Token(TokenType.OpAssign);
+                yield return new IdentifierToken("Globals");
+                yield return new Token(TokenType.Period);
+                yield return new IdentifierToken("item_data");
+                yield return new Token(TokenType.BracketOpen);
+                yield return new IdentifierToken("roll");
+                yield return new Token(TokenType.BracketClose);
+                yield return new Token(TokenType.BracketOpen);
+                yield return new ConstantToken(new StringVariant("file"));
+                yield return new Token(TokenType.BracketClose);
+                yield return new Token(TokenType.Period);
+                yield return new IdentifierToken("item_name");
+
+
+
+                yield return new Token(TokenType.Newline, 3);
                 yield return new IdentifierToken("PlayerData");
                 yield return new Token(TokenType.Period);
                 yield return new IdentifierToken("_send_notification");
@@ -46,7 +64,7 @@ public class LootTable : IScriptMod
                 yield return new Token(TokenType.OpAdd);
                 yield return new Token(TokenType.BuiltInFunc, 62);
                 yield return new Token(TokenType.ParenthesisOpen);
-                yield return new IdentifierToken("roll");
+                yield return new IdentifierToken("item");
                 yield return new Token(TokenType.ParenthesisClose);
                 yield return new Token(TokenType.OpAdd);
                 yield return new ConstantToken(new StringVariant(" / Size: "));

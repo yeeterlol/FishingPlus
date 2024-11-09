@@ -9,34 +9,20 @@
 [ext_resource path="res://Scenes/Menus/Main Menu/ui_generic_button.gd" type="Script" id=7]
 
 [node name="Control" type="Control"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = 1920.0
+margin_bottom = 1080.0
 script = ExtResource( 4 )
-
-[node name="fishingplus" type="Button" parent="."]
-margin_left = 1771.0
-margin_top = 92.0
-margin_right = 1805.0
-margin_bottom = 126.0
-rect_min_size = Vector2( 34, 34 )
-theme = ExtResource( 1 )
-icon = ExtResource( 3 )
-expand_icon = true
-script = ExtResource( 7 )
-
-[node name="TooltipNode" type="Control" parent="fishingplus"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-script = ExtResource( 6 )
-header = "Fishing+ Settings"
-body = "Set custom settings for Fishing+"
 
 [node name="Panel" type="Panel" parent="."]
 visible = false
-margin_left = 674.0
-margin_top = 187.0
-margin_right = 1239.0
-margin_bottom = 798.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -282.5
+margin_top = -323.34
+margin_right = 282.5
+margin_bottom = 323.34
 
 [node name="percentLabel" type="Label" parent="Panel"]
 margin_left = 52.0
@@ -91,7 +77,7 @@ margin_left = 18.0
 margin_top = 10.0
 margin_right = 162.0
 margin_bottom = 44.0
-text = "Fishing+ 1.5.0"
+text = "Fishing+ 1.5.2"
 
 [node name="percent" type="Button" parent="Panel"]
 margin_left = 10.0
@@ -174,7 +160,7 @@ margin_bottom = -16.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/Panel2/ScrollContainer"]
 margin_right = 501.0
-margin_bottom = 290.38
+margin_bottom = 311.074
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 8
@@ -188,9 +174,9 @@ mouse_filter = 2
 
 [node name="Control" type="Control" parent="Panel/Panel2/TextureRect"]
 margin_left = 266.0
-margin_top = 161.0
+margin_top = 171.0
 margin_right = 266.0
-margin_bottom = 161.0
+margin_bottom = 171.0
 mouse_filter = 2
 
 [node name="dial" type="Sprite" parent="Panel/Panel2/TextureRect/Control"]
@@ -211,7 +197,22 @@ margin_top = 217.0
 margin_right = 528.0
 margin_bottom = 260.0
 
-[connection signal="pressed" from="fishingplus" to="." method="_open"]
+[node name="fishingplus" type="Button" parent="."]
+margin_right = 34.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 34, 34 )
+theme = ExtResource( 1 )
+icon = ExtResource( 3 )
+expand_icon = true
+script = ExtResource( 7 )
+
+[node name="TooltipNode" type="Control" parent="fishingplus"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 6 )
+header = "Fishing+ Settings"
+body = "Set custom settings for Fishing+"
+
 [connection signal="pressed" from="Panel/percent" to="." method="_on_percent_pressed"]
 [connection signal="pressed" from="Panel/possible" to="." method="_on_possible_pressed"]
 [connection signal="pressed" from="Panel/patient" to="." method="_on_patient_pressed"]
@@ -222,3 +223,4 @@ margin_bottom = 260.0
 [connection signal="focus_entered" from="Panel/LineEdit" to="." method="_on_LineEdit_focus_entered"]
 [connection signal="focus_exited" from="Panel/LineEdit" to="." method="_on_LineEdit_focus_exited"]
 [connection signal="text_changed" from="Panel/LineEdit" to="." method="_on_LineEdit_text_changed"]
+[connection signal="pressed" from="fishingplus" to="." method="_open"]

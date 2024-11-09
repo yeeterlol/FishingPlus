@@ -9,7 +9,7 @@ onready var fishnotify = false
 onready var current_fish = []
 onready var on_focus_type = false
 onready var mod_panel = preload("res://mods/FishingPlus/ui/panel/mod_panel.tscn")
-# Called when the node enters the scene tree for the first time.
+
 
 var gdweave_directory := OS.get_executable_path() + "/../GDWeave/"
 var configs_directory := gdweave_directory + "configs/"

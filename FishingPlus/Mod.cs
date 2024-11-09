@@ -18,6 +18,8 @@ public class Mod : IMod {
         modInterface.RegisterScriptMod(new AutoSelectBait());
         modInterface.RegisterScriptMod(new AutoCollectBuddies());
         modInterface.RegisterScriptMod(new PatientLurePatch());
+        modInterface.RegisterScriptMod(new CustomTitle());
+
     }
 
     public void Dispose() {
