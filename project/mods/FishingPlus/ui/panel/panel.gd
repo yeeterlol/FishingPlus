@@ -50,7 +50,6 @@ func _open():
 		$Panel.visible = true
 func _close():
 	$Panel.visible = false
-
 # below here is the most slop yandere sim code that i have ever wrote
 # i honestly just wanted to write it as fast as possible
 func _add_fish_id(fish_id):

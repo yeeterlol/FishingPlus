@@ -33,28 +33,59 @@ public class AutoCollectBuddies : IScriptMod
                 yield return new Token(TokenType.Period);
                 yield return new IdentifierToken("autocollect");
                 yield return new Token(TokenType.Colon);
+
+                yield return new Token(TokenType.Newline, 2);
+                yield return new Token(TokenType.PrVar);
+                yield return new IdentifierToken("the_fish");
+                yield return new Token(TokenType.OpAssign);
+                yield return new IdentifierToken("Globals");
+                yield return new Token(TokenType.Period);
+                yield return new IdentifierToken("item_data");
+                yield return new Token(TokenType.BracketOpen);
+                yield return new IdentifierToken("roll");
+                yield return new Token(TokenType.BracketClose);
+                yield return new Token(TokenType.BracketOpen);
+                yield return new ConstantToken(new StringVariant("file"));
+                yield return new Token(TokenType.BracketClose);
+                yield return new Token(TokenType.Period);
+                yield return new IdentifierToken("item_name");
+
+                yield return new Token(TokenType.Newline, 2);
+                yield return new Token(TokenType.PrVar);
+                yield return new IdentifierToken("fish_quality");
+                yield return new Token(TokenType.OpAssign);
+                yield return new IdentifierToken("PlayerData");
+                yield return new Token(TokenType.Period);
+                yield return new IdentifierToken("QUALITY_DATA");
+                yield return new Token(TokenType.BracketOpen);
+                yield return new IdentifierToken("quality");
+                yield return new Token(TokenType.BracketClose);
+                yield return new Token(TokenType.Period);
+                yield return new IdentifierToken("name");
+
+
                 yield return new Token(TokenType.Newline, 2);
                 // PlayerData._send_notification("you caught a " + roll + " with size " + str(size) + " and quality " + str(quality))
                 yield return new IdentifierToken("PlayerData");
                 yield return new Token(TokenType.Period);
                 yield return new IdentifierToken("_send_notification");
                 yield return new Token(TokenType.ParenthesisOpen);
-                yield return new ConstantToken(new StringVariant("you caught a "));
+                yield return new ConstantToken(new StringVariant("you caught "));
                 yield return new Token(TokenType.OpAdd);
-                yield return new IdentifierToken("roll");
+                yield return new IdentifierToken("the_fish");
                 yield return new Token(TokenType.OpAdd);
-                yield return new ConstantToken(new StringVariant(" with size"));
+                yield return new ConstantToken(new StringVariant(" / size "));
                 yield return new Token(TokenType.OpAdd);
                 yield return new Token(TokenType.BuiltInFunc, 62);
                 yield return new Token(TokenType.ParenthesisOpen);
                 yield return new IdentifierToken("size");
                 yield return new Token(TokenType.ParenthesisClose);
                 yield return new Token(TokenType.OpAdd);
-                yield return new ConstantToken(new StringVariant(" and quality "));
+                yield return new ConstantToken(new StringVariant(" / quality "));
                 yield return new Token(TokenType.OpAdd);
                 yield return new Token(TokenType.BuiltInFunc, 62);
                 yield return new Token(TokenType.ParenthesisOpen);
-                yield return new IdentifierToken("quality");
+                yield return new IdentifierToken("fish_quality");
                 yield return new Token(TokenType.ParenthesisClose);
                 yield return new Token(TokenType.ParenthesisClose);
 

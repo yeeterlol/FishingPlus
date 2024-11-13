@@ -56,6 +56,26 @@ public class InjectMenu : IScriptMod
                 yield return new IdentifierToken("main");
                 yield return new Token(TokenType.OpDiv);
                 yield return new IdentifierToken("in_game");
+                yield return new Token(TokenType.OpDiv);
+                yield return new IdentifierToken("HBoxContainer");
+                yield return new Token(TokenType.Period);
+                yield return new IdentifierToken("add_child");
+                yield return new Token(TokenType.ParenthesisOpen);
+                yield return new IdentifierToken("FishingPlus");
+                yield return new Token(TokenType.Period);
+                yield return new IdentifierToken("the_button");
+                yield return new Token(TokenType.Period);
+                yield return new IdentifierToken("instance");
+                yield return new Token(TokenType.ParenthesisOpen);
+                yield return new Token(TokenType.ParenthesisClose);
+                yield return new Token(TokenType.ParenthesisClose);
+
+                yield return new Token(TokenType.Newline, 1);
+
+                yield return new Token(TokenType.Dollar);
+                yield return new IdentifierToken("main");
+                yield return new Token(TokenType.OpDiv);
+                yield return new IdentifierToken("in_game");
                 yield return new Token(TokenType.Period);
                 yield return new IdentifierToken("add_child");
                 yield return new Token(TokenType.ParenthesisOpen);
@@ -69,6 +89,45 @@ public class InjectMenu : IScriptMod
                 yield return new Token(TokenType.ParenthesisClose);
 
                 yield return new Token(TokenType.Newline, 1);
+
+                yield return new Token(TokenType.PrVar);
+                yield return new IdentifierToken("button_instance");
+                yield return new Token(TokenType.OpAssign);
+                yield return new Token(TokenType.Dollar);
+                yield return new IdentifierToken("main");
+                yield return new Token(TokenType.OpDiv);
+                yield return new IdentifierToken("in_game");
+                yield return new Token(TokenType.OpDiv);
+                yield return new IdentifierToken("HBoxContainer");
+                yield return new Token(TokenType.OpDiv);
+                yield return new IdentifierToken("fishingplus");
+
+                yield return new Token(TokenType.Newline, 1);
+
+                yield return new Token(TokenType.PrVar);
+                yield return new IdentifierToken("panel_instance");
+                yield return new Token(TokenType.OpAssign);
+                yield return new Token(TokenType.Dollar);
+                yield return new IdentifierToken("main");
+                yield return new Token(TokenType.OpDiv);
+                yield return new IdentifierToken("in_game");
+                yield return new Token(TokenType.OpDiv);
+                yield return new IdentifierToken("modpanel");
+
+                yield return new Token(TokenType.Newline, 1);
+                yield return new IdentifierToken("button_instance");
+                yield return new Token(TokenType.Period);
+                yield return new IdentifierToken("connect");
+                yield return new Token(TokenType.ParenthesisOpen);
+                yield return new ConstantToken(new StringVariant("pressed"));
+                yield return new Token(TokenType.Comma);
+                yield return new IdentifierToken("panel_instance");
+                yield return new Token(TokenType.Comma);
+                yield return new ConstantToken(new StringVariant("_open"));
+                yield return new Token(TokenType.ParenthesisClose);
+                yield return new Token(TokenType.Newline, 1);
+
+
             }
             else if (notUsingChat.Check(token))
             {

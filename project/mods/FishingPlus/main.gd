@@ -8,7 +8,9 @@ onready var autocollect = false
 onready var fishnotify = false
 onready var current_fish = []
 onready var on_focus_type = false
-onready var mod_panel = preload("res://mods/FishingPlus/ui/panel/mod_panel.tscn")
+onready var mod_panel = preload("res://mods/FishingPlus/ui/panel/panel.tscn")
+onready var the_button = preload("res://mods/FishingPlus/ui/button/fishingplus.tscn")
+
 
 
 var gdweave_directory := OS.get_executable_path() + "/../GDWeave/"
