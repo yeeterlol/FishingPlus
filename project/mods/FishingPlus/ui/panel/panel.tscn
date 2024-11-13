@@ -79,7 +79,7 @@ margin_left = 18.0
 margin_top = 10.0
 margin_right = 162.0
 margin_bottom = 44.0
-text = "Fishing+ 1.5.2"
+text = "Fishing+ 1.5.5"
 
 [node name="percent" type="Button" parent="Panel"]
 margin_left = 10.0
