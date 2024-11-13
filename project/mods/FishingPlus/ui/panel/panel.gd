@@ -46,10 +46,16 @@ func _set_buttons():
 func _open():
 	if $Panel.visible == true:
 		$Panel.visible = false
+		self.set_process(false)
+		self.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	else:
 		$Panel.visible = true
+		self.set_process(true)
+		self.mouse_filter = Control.MOUSE_FILTER_STOP
 func _close():
 	$Panel.visible = false
+	self.set_process(false)
+	self.mouse_filter = Control.MOUSE_FILTER_IGNORE
 # below here is the most slop yandere sim code that i have ever wrote
 # i honestly just wanted to write it as fast as possible
 func _add_fish_id(fish_id):
