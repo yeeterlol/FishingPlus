@@ -1,0 +1,17 @@
+
+id = "FishingPlus"
+name = "FishingPlus"
+description = "Mod that improves fishing quality of life"
+version = "1.5.6"
+homepage = "https://github.com/yeeterlol/FishingPlus"
+author = "yeeter"
+
+icon = "icon.png"
+readme = "README.md"
+
+[project]
+csharp = "./FishingPlus/FishingPlus.csproj"
+godot = "./project/project.godot"
+
+[[dependencies]]
+thunderstore_version = "NotNet-GDWeave-2.0.14"
